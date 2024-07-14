@@ -2,12 +2,14 @@
 
 use std::thread::current;
 
-#[derive(Clone)]
+use serde::{Deserialize, Serialize};
+
+#[derive(Clone, Serialize, Deserialize)]
 pub struct LinkedList<T> {
     pub head: Option<Box<Node<T>>>,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Serialize, Deserialize)]
 pub struct Node<T> {
     pub val: T,
     pub next: Option<Box<Node<T>>>,
